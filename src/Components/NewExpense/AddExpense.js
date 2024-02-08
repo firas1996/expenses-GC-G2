@@ -1,26 +1,36 @@
-import React from "react";
+import { useState } from "react";
+import "./AddExpense.css";
 
 const AddExpense = () => {
+  const [title, setTitle] = useState("");
+  const titleChanger = (event) => {
+    setTitle(event.target.value);
+  };
+  const submitHandler = (event) => {
+    event.preventDefault();
+    console.log(title);
+    setTitle("");
+  };
   return (
-    <div>
-      <form>
-        <div>
-          <div>
-            <label>Title</label>
-            <input />
+    <div className="new-expense">
+      <form onSubmit={submitHandler}>
+        <div className="new-expense__controls">
+          <div className="new-expense__control">
+            <label>Title {title} </label>
+            <input placeholder="Title" onChange={titleChanger} value={title} />
           </div>
-          <div>
+          <div className="new-expense__control">
             <label>Price</label>
-            <input />
+            <input type="number" placeholder="Price" min="0" />
           </div>
-          <div>
+          <div className="new-expense__control">
             <label>Date</label>
-            <input />
+            <input type="date" min="2022-01-01" max="2026-12-31" />
           </div>
         </div>
-        <div>
+        <div className="new-expense__actions">
           <button>Cancel</button>
-          <button>Add Expense</button>
+          <button type="submit">Add Expense</button>
         </div>
       </form>
     </div>
