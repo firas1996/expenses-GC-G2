@@ -1,12 +1,12 @@
-import React from "react";
+import "./ExpenseCard.css";
 
 const ExpenseCard = () => {
   return (
-    <div>
+    <div className="expense-card">
       <div>date</div>
-      <div>
+      <div className="expense-card__info">
         <label>title</label>
-        <div>price</div>
+        <div className="expense-card__price">price</div>
       </div>
     </div>
   );
