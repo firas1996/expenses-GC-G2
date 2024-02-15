@@ -2,32 +2,50 @@ import { useState } from "react";
 import "./AddExpense.css";
 
 const AddExpense = () => {
-  const [title, setTitle] = useState("");
-  const [price, setPrice] = useState("");
-  const [date, setDate] = useState("");
+  // const [title, setTitle] = useState("");
+  // const [price, setPrice] = useState("");
+  // const [date, setDate] = useState("");
+  const [userInput, setUserInput] = useState({
+    title: "",
+    price: "",
+    date: "",
+  });
   const titleChanger = (event) => {
-    setTitle(event.target.value);
+    // setTitle(event.target.value);
+    setUserInput({ ...userInput, title: event.target.value });
+    console.log(userInput);
   };
   const priceChanger = (event) => {
-    setPrice(event.target.value);
+    // setPrice(event.target.value);
+    setUserInput({ ...userInput, price: event.target.value });
   };
   const dateChanger = (event) => {
-    setDate(event.target.value);
+    // setDate(event.target.value);
+    setUserInput({ ...userInput, date: event.target.value });
   };
   const submitHandler = (event) => {
     event.preventDefault();
-    console.log(title);
-    setTitle("");
-    setPrice("");
-    setDate("");
+    console.log(userInput);
+    // setTitle("");
+    // setPrice("");
+    // setDate("");
+    setUserInput({
+      title: "",
+      price: "",
+      date: "",
+    });
   };
   return (
     <div className="new-expense">
       <form onSubmit={submitHandler}>
         <div className="new-expense__controls">
           <div className="new-expense__control">
-            <label>Title {title} </label>
-            <input placeholder="Title" onChange={titleChanger} value={title} />
+            <label>Title</label>
+            <input
+              placeholder="Title"
+              onChange={titleChanger}
+              value={userInput.title}
+            />
           </div>
           <div className="new-expense__control">
             <label>Price</label>
@@ -36,7 +54,7 @@ const AddExpense = () => {
               placeholder="Price"
               min="0"
               onChange={priceChanger}
-              value={price}
+              value={userInput.price}
             />
           </div>
           <div className="new-expense__control">
@@ -46,7 +64,7 @@ const AddExpense = () => {
               min="2022-01-01"
               max="2026-12-31"
               onChange={dateChanger}
-              value={date}
+              value={userInput.date}
             />
           </div>
         </div>
