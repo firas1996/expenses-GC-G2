@@ -1,12 +1,16 @@
 import "./ExpenseCard.css";
 
-const ExpenseCard = () => {
+const ExpenseCard = ({ title, price, date }) => {
   return (
     <div className="expense-card">
-      <div>date</div>
+      <div>
+        <div>month</div>
+        <div>year</div>
+        <div>day</div>
+      </div>
       <div className="expense-card__info">
-        <label>title</label>
-        <div className="expense-card__price">price</div>
+        <label>{title}</label>
+        <div className="expense-card__price">$ {price}</div>
       </div>
     </div>
   );
