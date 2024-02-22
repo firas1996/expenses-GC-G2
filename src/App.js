@@ -1,3 +1,4 @@
+import { useState } from "react";
 import ExpenseCard from "./Components/ExpenseCard";
 import ExpensesDash from "./Components/ExpensesDash";
 import AddExpense from "./Components/NewExpense/AddExpense";
@@ -29,10 +30,14 @@ function App() {
       date: new Date(2025, 4, 1),
     },
   ];
+  const [expenses, setExpenses] = useState(expensesData);
+  const getData = (data) => {
+    setExpenses([data, ...expenses]);
+  };
   return (
     <div>
-      <AddExpense />
-      <ExpensesDash expensesData={expensesData} />
+      <AddExpense getData={getData} />
+      <ExpensesDash expensesData={expenses} />
     </div>
   );
 }

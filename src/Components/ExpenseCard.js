@@ -13,7 +13,6 @@ const ExpenseCard = ({ title, price, date }) => {
       </div>
       <div className="expense-card__info">
         <label>{title}</label>
-        <button>Update Title !!!!</button>
         <div className="expense-card__price">$ {price}</div>
       </div>
     </div>
