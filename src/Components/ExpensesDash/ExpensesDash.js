@@ -1,12 +1,24 @@
+import { useState } from "react";
 import ExpenseCard from "./ExpenseCard";
 import "./ExpensesDash.css";
+import Filter from "./Filter";
 
 const ExpensesDash = ({ expensesData }) => {
   console.log(expensesData);
-
+  const years = [
+    "All",
+    ...new Set(expensesData.map((item) => item.date.getFullYear()).sort()),
+  ];
+  console.log(years);
+  const [selected, setSelected] = useState(years[0]);
+  console.log(selected);
+  const filtredExpenses = expensesData.filter((element) => {
+    return selected == "All" ? true : element.date.getFullYear() == selected;
+  });
   return (
     <div className="dash">
-      {expensesData.map((element) => {
+      <Filter data={years} setSelected={setSelected} selected={selected} />
+      {filtredExpenses.map((element) => {
         return (
           <ExpenseCard
             key={element.id}
