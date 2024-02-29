@@ -1,5 +1,5 @@
-import "./ExpensesDash.css";
 import ExpenseCard from "./ExpenseCard";
+import "./ExpensesDash.css";
 
 const ExpensesDash = ({ expensesData }) => {
   console.log(expensesData);

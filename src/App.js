@@ -1,7 +1,6 @@
 import { useState } from "react";
-import ExpenseCard from "./Components/ExpenseCard";
-import ExpensesDash from "./Components/ExpensesDash";
 import AddExpense from "./Components/NewExpense/AddExpense";
+import ExpensesDash from "./Components/ExpensesDash/ExpensesDash";
 
 function App() {
   const expensesData = [
