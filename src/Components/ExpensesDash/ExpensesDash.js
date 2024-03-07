@@ -19,7 +19,7 @@ const ExpensesDash = ({ expensesData }) => {
   return (
     <div className="dash">
       <Filter data={years} setSelected={setSelected} selected={selected} />
-      <ChartData />
+      <ChartData filtredExpenses={filtredExpenses} />
       {filtredExpenses.map((element) => {
         return (
           <ExpenseCard
