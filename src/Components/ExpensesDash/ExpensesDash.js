@@ -2,7 +2,7 @@ import { useState } from "react";
 import ExpenseCard from "./ExpenseCard";
 import "./ExpensesDash.css";
 import Filter from "./Filter";
-import Chart from "./Graphe/Chart";
+import ChartData from "./Graphe/ChartData";
 
 const ExpensesDash = ({ expensesData }) => {
   console.log(expensesData);
@@ -19,7 +19,7 @@ const ExpensesDash = ({ expensesData }) => {
   return (
     <div className="dash">
       <Filter data={years} setSelected={setSelected} selected={selected} />
-      <Chart />
+      <ChartData />
       {filtredExpenses.map((element) => {
         return (
           <ExpenseCard

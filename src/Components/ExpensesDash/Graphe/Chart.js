@@ -1,21 +1,12 @@
-import React from "react";
+import "./Chart.css";
 import ProgressBar from "./ProgressBar";
 
-const Chart = () => {
+const Chart = ({ data }) => {
   return (
-    <div>
-      <ProgressBar />
-      <ProgressBar />
-      <ProgressBar />
-      <ProgressBar />
-      <ProgressBar />
-      <ProgressBar />
-      <ProgressBar />
-      <ProgressBar />
-      <ProgressBar />
-      <ProgressBar />
-      <ProgressBar />
-      <ProgressBar />
+    <div className="chart">
+      {data.map((item) => {
+        return <ProgressBar month={item.month} value={item.value} />;
+      })}
     </div>
   );
 };

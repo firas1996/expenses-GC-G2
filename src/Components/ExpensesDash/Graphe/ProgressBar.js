@@ -1,12 +1,12 @@
-import React from "react";
+import "./ProgressBar.css";
 
-const ProgressBar = () => {
+const ProgressBar = ({ month, value }) => {
   return (
-    <div>
-      <div>
-        <div></div>
+    <div className="bar">
+      <div className="bar__inner">
+        <div className="bar__fill"></div>
       </div>
-      <label>label</label>
+      <label className="bar__label">{month}</label>
     </div>
   );
 };
