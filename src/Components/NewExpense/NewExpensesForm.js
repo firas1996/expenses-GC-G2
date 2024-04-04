@@ -31,6 +31,7 @@ const NewExpensesForm = ({ handelOpen, getData }) => {
       return { ...prevState, [event.target.name]: event.target.value };
     });
   };
+  // ss
   const submitHandler = (event) => {
     event.preventDefault();
     getData({
